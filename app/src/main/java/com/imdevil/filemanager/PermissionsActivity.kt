@@ -11,12 +11,12 @@ import android.provider.Settings
 import android.util.Log
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.fragment.app.FragmentActivity
 
 private const val TAG = "PermissionsActivity"
 
-open class PermissionsActivity : FragmentActivity() {
+open class PermissionsActivity : AppCompatActivity() {
 
     private var initialStart: Boolean = true
     private lateinit var storagePermissionDialog: AlertDialog

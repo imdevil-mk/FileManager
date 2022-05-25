@@ -27,15 +27,20 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewBinding.image.setOnClickListener {
+            navigate(MediaCategory.IMAGE)
+        }
         viewBinding.video.setOnClickListener {
-            val action =
-                HomeFragmentDirections.actionHomeFragmentToMediaFragment(MediaCategory.VIDEO)
-            findNavController().navigate(action)
+            navigate(MediaCategory.VIDEO)
         }
         viewBinding.audio.setOnClickListener {
-            val action =
-                HomeFragmentDirections.actionHomeFragmentToMediaFragment(MediaCategory.AUDIO)
-            findNavController().navigate(action)
+            navigate(MediaCategory.AUDIO)
         }
+    }
+
+    private fun navigate(category: MediaCategory) {
+        val action =
+            HomeFragmentDirections.actionHomeFragmentToMediaFragment(category)
+        findNavController().navigate(action)
     }
 }

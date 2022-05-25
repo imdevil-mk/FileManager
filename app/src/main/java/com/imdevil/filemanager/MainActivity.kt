@@ -5,7 +5,9 @@ import android.view.Menu
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.imdevil.filemanager.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : PermissionsActivity() {
 
     lateinit var binding: ActivityMainBinding

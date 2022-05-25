@@ -1,12 +1,12 @@
 package com.imdevil.filemanager.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
+import com.imdevil.filemanager.MainActivity
+import com.imdevil.filemanager.R
 import com.imdevil.filemanager.databinding.FragmentMediaBinding
 import com.imdevil.filemanager.viewmodels.MediaFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,8 +19,12 @@ class MediaFragment : LogFragment() {
     private val mediaFragmentArgs: MediaFragmentArgs by navArgs()
     private val viewModel: MediaFragmentViewModel by viewModels()
 
+    private lateinit var mainActivity: MainActivity
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        mainActivity = requireActivity() as MainActivity
+        setHasOptionsMenu(true)
         viewModel.query(mediaFragmentArgs.mediaType)
     }
 
@@ -40,5 +44,21 @@ class MediaFragment : LogFragment() {
                 viewBinding.text.text = it.size.toString()
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        menu.clear()
+        inflater.inflate(R.menu.media_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                mainActivity.onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">FileManager</string>
 
+    <string name="recently">Recently</string>
+    <string name="category">Category</string>
+
     <string name="media_image">Image</string>
     <string name="media_video">Video</string>
     <string name="media_audio">Audio</string>

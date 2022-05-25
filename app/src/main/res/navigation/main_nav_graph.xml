@@ -7,12 +7,25 @@
 
     <fragment
         android:id="@+id/recentFragment"
-        android:name="com.imdevil.filemanager.RecentFragment"
+        android:name="com.imdevil.filemanager.ui.RecentFragment"
         android:label="fragment_recent"
         tools:layout="@layout/fragment_recent" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.imdevil.filemanager.HomeFragment"
+        android:name="com.imdevil.filemanager.ui.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_mediaFragment"
+            app:destination="@id/mediaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mediaFragment"
+        android:name="com.imdevil.filemanager.ui.MediaFragment"
+        android:label="fragment_media"
+        tools:layout="@layout/fragment_media">
+        <argument
+            android:name="media_type"
+            app:argType="com.imdevil.filemanager.bean.MediaCategory" />
+    </fragment>
 </navigation>

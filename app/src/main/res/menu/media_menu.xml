@@ -3,12 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/search"
-        android:title="search"
-        app:showAsAction="always" />
+        android:id="@+id/menu_search"
+        android:icon="@drawable/ic_menu_search"
+        android:title="@string/search"
+        app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/view"
-        android:title="view"
-        app:showAsAction="always" />
+        android:id="@+id/menu_view_type"
+        android:icon="@drawable/ic_menu_grid_type"
+        android:title="@string/viewType"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_sort"
+        android:icon="@drawable/ic_menu_sort"
+        android:title="@string/sort"
+        app:showAsAction="ifRoom" />
 </menu>

@@ -2,19 +2,17 @@ package com.imdevil.filemanager.ui
 
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.imdevil.filemanager.R
 import com.imdevil.filemanager.bean.MediaCategory
 import com.imdevil.filemanager.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
 
     private lateinit var viewBinding: FragmentHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -28,7 +26,11 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewBinding.image.setOnClickListener {
-            navigate(MediaCategory.IMAGE)
+            /*/
+            val action = HomeFragmentDirections.actionHomeFragmentToMediaImagesByDirFragment()
+            findNavController().navigate(action)
+            */
+            navigate(MediaCategory.IMAGE_BY_PATH)
         }
         viewBinding.video.setOnClickListener {
             navigate(MediaCategory.VIDEO)

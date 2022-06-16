@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/workspace/FileManager/app/src/main/res/layout/fragment_home.xml" value="0.39291297550807713" />
+        <entry key="..\:/workspace/FileManager/app/src/main/res/layout/fragment_media_images_by_dir.xml" value="0.23725671918443003" />
         <entry key="..\:/workspace/FileManager/app/src/main/res/layout/fragment_recent.xml" value="0.39291297550807713" />
+        <entry key="..\:/workspace/FileManager/app/src/main/res/layout/images_by_dir_item.xml" value="0.39166666666666666" />
+        <entry key="..\:/workspace/FileManager/app/src/main/res/layout/list_images_by_dir_item.xml" value="0.536" />
         <entry key="..\:/workspace/FileManager/app/src/main/res/menu/main_toolbar_menu.xml" value="0.6139088729016786" />
       </map>
     </option>

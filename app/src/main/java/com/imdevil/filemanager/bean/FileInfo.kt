@@ -1,7 +1,6 @@
 package com.imdevil.filemanager.bean
 
 import android.net.Uri
-import java.util.*
 
 data class FileInfo(
     val id: Long,
@@ -9,7 +8,7 @@ data class FileInfo(
     val path: String,
     val displayName: String,
     val title: String,
-    val dateAdded: Date,
+    val dateModified: Long,
     val bucketId: Long,
     val bucketDisplayName: String,
     val size: Long,

@@ -37,10 +37,14 @@ class MainActivity : PermissionsActivity() {
                 R.id.homeFragment -> {
                     title = R.string.category
                 }
+                R.id.mediaImagesByDirFragment -> {
+                    showUp = true
+                    title = R.string.media_image
+                }
                 R.id.mediaFragment -> {
                     showUp = true
                     when (arguments?.get("media_type")) {
-                        MediaCategory.IMAGE -> title = R.string.media_image
+                        MediaCategory.IMAGE_BY_PATH -> title = R.string.media_image
                         MediaCategory.VIDEO -> title = R.string.media_video
                         MediaCategory.AUDIO -> title = R.string.media_audio
                     }

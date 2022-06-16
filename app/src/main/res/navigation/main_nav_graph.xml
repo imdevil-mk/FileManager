@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_homeFragment_to_mediaFragment"
             app:destination="@id/mediaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mediaImagesByDirFragment"
+            app:destination="@id/mediaImagesByDirFragment" />
     </fragment>
     <fragment
         android:id="@+id/mediaFragment"
@@ -27,5 +30,14 @@
         <argument
             android:name="media_type"
             app:argType="com.imdevil.filemanager.bean.MediaCategory" />
+    </fragment>
+    <fragment
+        android:id="@+id/mediaImagesByDirFragment"
+        android:name="com.imdevil.filemanager.ui.MediaImagesByDirFragment"
+        android:label="fragment_media_images_by_dir"
+        tools:layout="@layout/fragment_media_images_by_dir">
+        <action
+            android:id="@+id/action_mediaImagesByDirFragment_to_mediaFragment"
+            app:destination="@id/mediaFragment" />
     </fragment>
 </navigation>

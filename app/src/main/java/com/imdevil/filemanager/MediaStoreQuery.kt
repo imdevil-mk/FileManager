@@ -6,8 +6,6 @@ import android.provider.MediaStore
 import com.imdevil.filemanager.bean.FileInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import java.util.*
-import java.util.concurrent.TimeUnit
 
 class MediaStoreQuery(private val application: Application) {
 
@@ -55,8 +53,7 @@ class MediaStoreQuery(private val application: Application) {
                 val path = cursor.getString(dataColumn)
                 val displayName = cursor.getString(displayNameColumn)
                 val title = cursor.getString(titleColumn)
-                val dateModified =
-                    Date(TimeUnit.SECONDS.toMillis(cursor.getLong(dateModifiedColumn)))
+                val dateModified = cursor.getLong(dateModifiedColumn)
                 val bucketId = cursor.getLong(bucketIdColumn)
                 val bucketDisplayName = cursor.getString(bucketDisplayNameColumn)
                 val size = cursor.getLong(sizeColumn)
